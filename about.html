@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — Reefier</title>
+  <meta name="description" content="About Reefier: the institutional posture behind the concept, manifesto, framework, and index." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#040b16" />
+  <link rel="canonical" href="https://reefier.com/about.html" />
+  <meta property="og:title" content="About — Reefier" />
+  <meta property="og:description" content="The institutional posture of Reefier: what it is, what it is not, and why it is structured as a conceptual asset rather than a conventional digital property." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reefier.com/about.html" />
+  <meta property="og:image" content="https://reefier.com/assets/og/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="About — Reefier" />
+  <meta name="twitter:description" content="The institutional posture of Reefier: what it is, what it is not, and why it is structured as a conceptual asset rather than a conventional digital property." />
+  <meta name="twitter:image" content="https://reefier.com/assets/og/og-image.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root {
+      --bg-0: #040b16;
+      --bg-1: #061120;
+      --bg-2: #07182b;
+      --surface-1: rgba(7, 19, 35, 0.82);
+      --surface-2: rgba(8, 22, 40, 0.92);
+      --text: #edf5ff;
+      --muted: #a7bbda;
+      --soft: #7b8eab;
+      --blue: #4592ff;
+      --blue-bright: #74c0ff;
+      --violet: #7a67ff;
+      --marine: #7de7ff;
+      --max: 1320px;
+      --radius: 30px;
+      --shadow-deep: 0 26px 100px rgba(0, 0, 0, 0.42);
+      --font-ui: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "SF Pro Display", Inter, ui-sans-serif, system-ui, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-ui);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(69,146,255,0.18), transparent 22%),
+    radial-gradient(circle at 88% 12%, rgba(122,103,255,0.18), transparent 24%),
+    radial-gradient(circle at 55% 78%, rgba(70,120,255,0.09), transparent 26%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 32%, #02060d 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.018), transparent 24%),
+    repeating-linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.018) 1px, transparent 1px, transparent 15px);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.28), transparent 48%);
+  opacity: 0.24;
+  z-index: 0;
+}
+
+.deep-aura,.deep-aura::before,.deep-aura::after { content:""; position:fixed; pointer-events:none; filter:blur(78px); z-index:0; opacity:.82; }
+.deep-aura { top:4vh; left:-6vw; width:34vw; height:34vw; background:radial-gradient(circle, rgba(69,146,255,.26), transparent 62%); animation:driftA 18s ease-in-out infinite; }
+.deep-aura::before { top:12vh; right:-68vw; width:30vw; height:30vw; background:radial-gradient(circle, rgba(122,103,255,.23), transparent 62%); animation:driftB 20s ease-in-out infinite; }
+.deep-aura::after { bottom:-12vh; left:36vw; width:28vw; height:28vw; background:radial-gradient(circle, rgba(24,86,176,.22), transparent 62%); animation:driftC 16s ease-in-out infinite; }
+@keyframes driftA { 0%,100%{transform:translate3d(0,0,0);} 50%{transform:translate3d(2vw,2vh,0);} }
+@keyframes driftB { 0%,100%{transform:translate3d(0,0,0);} 50%{transform:translate3d(-3vw,2vh,0);} }
+@keyframes driftC { 0%,100%{transform:translate3d(0,0,0);} 50%{transform:translate3d(1.5vw,-2vh,0);} }
+
+.shell { position:relative; z-index:1; }
+.container { width:min(calc(100% - 40px), var(--max)); margin:0 auto; }
+.nav { position:sticky; top:0; z-index:80; backdrop-filter:blur(18px); background:linear-gradient(180deg, rgba(3,8,16,.88), rgba(3,8,16,.46)); border-bottom:1px solid rgba(122,103,255,.08); }
+.nav-inner { display:flex; justify-content:space-between; align-items:center; gap:18px; min-height:76px; }
+.brand { display:flex; align-items:center; gap:14px; color:inherit; text-decoration:none; min-width:0; }
+.brand-mark { width:12px; height:12px; border-radius:999px; background:linear-gradient(135deg, var(--blue-bright), var(--violet)); box-shadow:0 0 0 8px rgba(69,146,255,.08), 0 0 28px rgba(69,146,255,.3); flex:0 0 auto; }
+.brand-copy strong { display:block; font-family:var(--font-display); font-size:.92rem; letter-spacing:.30em; text-transform:uppercase; }
+.brand-copy span { display:block; margin-top:4px; color:var(--soft); font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; }
+.nav-links { display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+.nav-links a,.button { appearance:none; border:1px solid rgba(122,103,255,.16); background:rgba(255,255,255,.03); color:var(--text); text-decoration:none; padding:11px 15px; border-radius:999px; transition:transform .22s ease,border-color .22s ease,background .22s ease,box-shadow .22s ease; cursor:pointer; font:inherit; }
+.nav-links a:hover,.button:hover,.nav-links a:focus-visible,.button:focus-visible { outline:none; transform:translateY(-1px); border-color:rgba(116,192,255,.34); background:rgba(255,255,255,.06); box-shadow:0 0 0 4px rgba(69,146,255,.08); }
+.nav-links a[aria-current="page"] { background:linear-gradient(135deg, rgba(69,146,255,.16), rgba(122,103,255,.16)); border-color:rgba(116,192,255,.22); }
+.button-primary { background:linear-gradient(135deg, rgba(69,146,255,.18), rgba(122,103,255,.18)); border-color:rgba(116,192,255,.24); }
+
+.section,.hero,.lexical { padding:34px 0; }
+
+.plate,.monument,.card,.footer-panel { position:relative; overflow:hidden; border-radius:var(--radius); border:1px solid rgba(122,103,255,.14); background:linear-gradient(180deg, rgba(8,20,37,.80), rgba(6,15,29,.96)); box-shadow:var(--shadow-deep); }
+.plate::before,.monument::before,.card::before,.footer-panel::before { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(180deg, rgba(255,255,255,.028), transparent 24%, transparent 76%, rgba(255,255,255,.014)); }
+.plate { padding:32px 36px; }
+.monument { padding:44px; background:radial-gradient(circle at 76% 18%, rgba(122,103,255,.13), transparent 24%), radial-gradient(circle at 14% 72%, rgba(69,146,255,.10), transparent 24%), linear-gradient(180deg, rgba(8,20,37,.76), rgba(5,12,22,.98)); }
+.card { padding:30px; }
+
+.lexical-grid,.hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:28px; align-items:start; }
+.hero-grid { grid-template-columns:1.18fr .82fr; gap:34px; }
+
+.mini-label,.eyebrow { display:inline-flex; align-items:center; gap:10px; color:var(--muted); font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; margin-bottom:18px; }
+.mini-label::before,.eyebrow::before { content:""; width:40px; height:1px; background:linear-gradient(90deg, rgba(116,192,255,.94), transparent); }
+
+h1,h2,h3 { margin:0; font-family:var(--font-display); letter-spacing:-.04em; }
+h1 { font-size:clamp(3rem, 7vw, 6rem); line-height:.9; }
+h2 { font-size:clamp(1.85rem, 3vw, 2.8rem); line-height:1.02; }
+h3 { font-size:1.2rem; line-height:1.18; letter-spacing:-.02em; margin-bottom:14px; }
+.lead { margin:18px 0 0; color:var(--muted); line-height:1.95; font-size:1.1rem; max-width:74ch; }
+.subtle { color:var(--soft); }
+.lexical-word { font-size:clamp(2.35rem, 4.6vw, 4rem); line-height:.95; text-shadow:0 0 26px rgba(122,103,255,.16); margin-bottom:10px; }
+.lexical-type,.lexical-note,.authority-note { font-family:var(--font-mono); font-size:.92rem; line-height:1.85; color:var(--soft); }
+.lexical-definition { margin:16px 0 12px; color:var(--muted); line-height:1.92; font-size:1.06rem; max-width:62ch; }
+.lexical-side,.hero-side,.quote-box { border-left:1px solid rgba(116,192,255,.22); padding-left:20px; color:var(--text); line-height:1.9; font-size:1rem; }
+.hero-title { text-shadow:0 0 34px rgba(69,146,255,.12), 0 0 46px rgba(122,103,255,.08); margin-bottom:10px; }
+.hero-subtitle { font-size:clamp(1.08rem, 1.9vw, 1.34rem); line-height:1.4; color:var(--marine); letter-spacing:.06em; text-transform:uppercase; }
+.hero-actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:30px; }
+
+.section-grid { display:grid; grid-template-columns:320px minmax(0,1fr); gap:30px; align-items:start; }
+.section-label { padding-top:12px; position:sticky; top:104px; }
+.section-label .mini { font-size:.74rem; color:var(--soft); letter-spacing:.18em; text-transform:uppercase; margin-bottom:14px; }
+.section-label p { margin:16px 0 0; color:var(--muted); line-height:1.84; max-width:28ch; }
+.stack { display:grid; gap:18px; }
+.card p,.card li { color:var(--muted); line-height:1.88; font-size:1rem; }
+.card ul { margin:0; padding-left:18px; }
+.grid-2,.grid-3,.posture-grid,.architecture-grid { display:grid; gap:18px; }
+.grid-2,.posture-grid,.architecture-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
+.grid-3 { grid-template-columns:repeat(3, minmax(0,1fr)); }
+.posture-monument { padding:36px; background:radial-gradient(circle at 50% 18%, rgba(116,192,255,.08), transparent 22%), linear-gradient(180deg, rgba(10,24,42,.84), rgba(6,14,26,.98)); }
+.posture-monument .quote-box { max-width:900px; margin:0 auto; }
+.footer { padding:36px 0 58px; }
+.footer-panel { padding:26px 30px; display:grid; gap:16px; }
+.footer-panel p { margin:0; color:var(--muted); line-height:1.86; }
+.footer-meta { display:flex; gap:10px; flex-wrap:wrap; color:var(--soft); font-size:.85rem; }
+.reveal { opacity:0; transform:translateY(20px); transition:opacity .66s ease, transform .66s ease; }
+.reveal.is-visible { opacity:1; transform:translateY(0); }
+
+@media (max-width: 1180px) {
+  .lexical-grid,.hero-grid,.section-grid,.grid-2,.grid-3,.posture-grid,.architecture-grid { grid-template-columns:1fr; }
+  .section-label { position:static; }
+}
+@media (max-width: 760px) {
+  .container { width:min(calc(100% - 24px), var(--max)); }
+  .nav-links { display:none; }
+  .nav-inner { min-height:64px; align-items:flex-start; padding:10px 0; }
+  .plate,.monument,.card,.footer-panel { padding:22px; }
+  .section,.hero,.lexical { padding:24px 0; }
+  h1 { font-size:clamp(2.5rem, 13vw, 4.6rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior:auto; }
+  *,*::before,*::after { animation:none !important; transition:none !important; }
+  .reveal { opacity:1; transform:none; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="deep-aura" aria-hidden="true"></div>  <div class="shell">
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html" aria-label="Return to Reefier home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-copy">
+            <strong>Reefier</strong>
+            <span>Structural Intelligence Beneath the Surface</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="manifesto.html">Manifesto</a>
+          <a href="framework.html">Framework</a>
+          <a href="about.html" aria-current="page">About</a>
+        </nav>
+      </div>
+    </header><main>
+  <section class="lexical">
+    <div class="container">
+      <article class="plate reveal">
+        <div class="lexical-grid">
+          <div>
+            <div class="mini-label">Institutional Posture</div>
+            <h1 class="lexical-word">About Reefier</h1>
+            <p class="lexical-type">Contextual and institutional layer</p>
+            <p class="lexical-definition">Reefier is not presented as a personal venture, a conventional startup surface, or a trend-led content property. It is structured as a conceptual asset designed for reference, citation, and long-horizon strategic value.</p>
+            <p class="lexical-note">This page exists to clarify posture, not personality.</p>
+            <p class="authority-note">It defines what Reefier is, what it is not, and why its restraint is part of its institutional logic rather than an absence of ambition.</p>
+          </div>
+          <div class="lexical-side">If the home surface defines the term, the manifesto justifies its necessity, and the framework stabilizes its methodology, the About layer explains why Reefier must be understood as a reference system rather than a conventional digital property.</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="container">
+      <article class="monument reveal">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">About · Institutional Posture · Context Layer</div>
+            <h1 class="hero-title">REEFIER IS NOT PRESENTED AS A PERSONALITY. IT IS PRESENTED AS A REFERENCE SYSTEM.</h1>
+            <div class="hero-subtitle">Why the asset is structured the way it is</div>
+            <p class="lead">This page does not exist to narrate founders, team mythology, or startup biography. It exists to state the institutional posture of Reefier: what it is, what it is not, and why it has been structured as a conceptual asset rather than a conventional digital property.</p>
+            <div class="hero-actions">
+              <a class="button" href="index.html">Return Home</a>
+              <a class="button button-primary" href="framework.html">View Framework</a>
+            </div>
+          </div>
+          <div class="hero-side">Reefier exists as a definitional environment composed of four visible surfaces: the interface, the manifesto, the framework, and the index. Together, they make the concept legible, measurable, and citable.</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="position">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Position</div>
+        <h2>What Reefier is</h2>
+        <p>The first task of the About layer is to prevent conceptual drift.</p>
+      </div>
+      <div class="stack">
+        <article class="card reveal">
+          <h3>A conceptual authority surface</h3>
+          <p>Reefier is a conceptual system built to define structural intelligence beneath the surface. It is not merely a name, not merely a website, and not merely a design artifact. Its purpose is to provide language, model, and measurement for systems whose true value cannot be adequately explained by visible surface features alone.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="not">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Boundary</div>
+        <h2>What Reefier is not</h2>
+        <p>Institutional clarity requires explicit refusal.</p>
+      </div>
+      <div class="stack">
+        <div class="posture-grid">
+          <article class="card reveal">
+            <h3>Not a conventional startup microsite</h3>
+            <p>Reefier does not exist to behave like a launch page chasing conversion, excitement, or perpetual motion.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Not a personal founder narrative</h3>
+            <p>Its authority is not organized around biography, personality, or behind-the-scenes intimacy.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Not a trend-chasing content brand</h3>
+            <p>It is not optimized for feed logic, volume publishing, or reactive commentary.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Not a generic blog about systems</h3>
+            <p>Its purpose is not discourse for its own sake, but definitional precision and conceptual durability.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="become">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Trajectory</div>
+        <h2>What Reefier is designed to become</h2>
+        <p>The structure of the asset is forward-compatible with institutional use.</p>
+      </div>
+      <div class="stack">
+        <div class="architecture-grid">
+          <article class="card reveal">
+            <h3>A reference definition</h3>
+            <p>The term is built to be transferred, quoted, and used outside its immediate presentation.</p>
+          </article>
+          <article class="card reveal">
+            <h3>A cited framework</h3>
+            <p>The methodology is designed to be used in reports, assessments, and future conceptual systems.</p>
+          </article>
+          <article class="card reveal">
+            <h3>A measurable index</h3>
+            <p>Reefier is not left at the level of metaphor. It is translated into an instrument for classification.</p>
+          </article>
+          <article class="card reveal">
+            <h3>An institutional naming layer</h3>
+            <p>Its highest function is to become the term others reach for when existing vocabulary no longer holds structural depth.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="architecture">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Architecture</div>
+        <h2>The visible system</h2>
+        <p>No page exists as a self-sufficient gesture. Each page belongs to a larger referential architecture.</p>
+      </div>
+      <div class="stack">
+        <div class="grid-3">
+          <article class="card reveal">
+            <h3>Home</h3>
+            <p>The front surface. It establishes the term, the lexical authority, and the Reefier Index as the first measurable expression of the concept.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Manifesto</h3>
+            <p>The declarative layer. It states why Reefier matters, why surface language fails, and why deep structure requires new recognition.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Framework</h3>
+            <p>The methodological layer. It defines the Reefier Index, its dimensions, its calculation, and the interpretive tiers used for classification.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="institutional">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Institutional Test</div>
+        <h2>What makes this more than a website</h2>
+        <p>Institutional character is not granted by luxury design alone. It emerges when others return to the asset to define what they cannot define elsewhere.</p>
+      </div>
+      <div class="stack">
+        <article class="card posture-monument reveal">
+          <div class="quote-box">Reefier becomes institutional when the concept is cited by people who do not know its owner, but need its language.</div>
+        </article>
+        <div class="grid-2">
+          <article class="card reveal">
+            <h3>Definition</h3>
+            <p>The term is transferable. It can be quoted, reused, and restated in formal contexts without collapsing into marketing language.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Framework</h3>
+            <p>The concept is operational. It gains method, variables, tiers, and a classification logic that others can apply.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Index</h3>
+            <p>The concept is measurable. This is the transition from language into instrument.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Future Archive</h3>
+            <p>In later phases, Reefier can expand into library, protocol, and recognition layers without sacrificing coherence.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="restraint">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Operating Principle</div>
+        <h2>Why the asset is restrained</h2>
+        <p>Reefier is intentionally low-noise. Its restraint is strategic, not incomplete.</p>
+      </div>
+      <div class="stack">
+        <article class="card reveal">
+          <h3>Signal discipline</h3>
+          <p>Authority is weakened when every page asks for attention. Reefier instead relies on spacing, definitional language, methodological clarity, and structural coherence. It is designed to be revisited, not consumed once and discarded.</p>
+          <p>This restraint is part of the concept itself. A conceptual asset gains value when it appears stable enough to be referenced, not loud enough to be briefly noticed.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-panel reveal">
+        <p>The About layer establishes Reefier’s institutional posture: a high-trust conceptual asset designed for reference, citation, and long-horizon strategic value.</p>
+        <div class="footer-meta">
+          <span>About v3</span>
+          <span>·</span>
+          <span>Institutional Posture</span>
+          <span>·</span>
+          <span>Contextual Surface</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+  </div>  <script>
+    (function () {
+      const items = document.querySelectorAll('.reveal');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        items.forEach((item) => item.classList.add('is-visible'));
+        return;
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -6% 0px' });
+      items.forEach((item) => observer.observe(item));
+    })();
+  </script>
+</body>
+</html>

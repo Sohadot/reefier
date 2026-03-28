@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Framework — The Reefier Index Methodology</title>
+  <meta name="description" content="The official Reefier Index methodology: a structural model for defining, detecting, measuring, and classifying intelligence formed beneath visible systems." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#040b16" />
+  <link rel="canonical" href="https://reefier.com/framework.html" />
+  <meta property="og:title" content="Framework — The Reefier Index Methodology" />
+  <meta property="og:description" content="The official Reefier Index methodology for structural intelligence beneath visible systems." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://reefier.com/framework.html" />
+  <meta property="og:image" content="https://reefier.com/assets/og/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Framework — The Reefier Index Methodology" />
+  <meta name="twitter:description" content="The official Reefier Index methodology for structural intelligence beneath visible systems." />
+  <meta name="twitter:image" content="https://reefier.com/assets/og/og-image.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <link rel="icon" href="/favicon.ico" />
+  <style>
+    :root {
+      --bg-0: #040b16;
+      --bg-1: #061120;
+      --bg-2: #07182b;
+      --bg-3: #0a1f36;
+      --surface-1: rgba(7, 19, 35, 0.82);
+      --surface-2: rgba(8, 22, 40, 0.92);
+      --surface-3: rgba(10, 25, 46, 0.72);
+      --line: rgba(118, 102, 255, 0.18);
+      --line-strong: rgba(93, 175, 255, 0.28);
+      --text: #edf5ff;
+      --muted: #a7bbda;
+      --soft: #7b8eab;
+      --blue: #4592ff;
+      --blue-bright: #74c0ff;
+      --violet: #7a67ff;
+      --violet-bright: #a592ff;
+      --marine: #7de7ff;
+      --max: 1320px;
+      --radius: 30px;
+      --radius-sm: 18px;
+      --shadow-deep: 0 26px 100px rgba(0, 0, 0, 0.42);
+      --font-ui: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --font-display: "SF Pro Display", Inter, ui-sans-serif, system-ui, sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    }* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--text);
+  font-family: var(--font-ui);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 12% 10%, rgba(69,146,255,0.18), transparent 22%),
+    radial-gradient(circle at 88% 12%, rgba(122,103,255,0.18), transparent 24%),
+    radial-gradient(circle at 55% 78%, rgba(70,120,255,0.09), transparent 26%),
+    linear-gradient(180deg, var(--bg-1) 0%, var(--bg-0) 32%, #02060d 100%);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, rgba(255,255,255,0.018), transparent 24%),
+    repeating-linear-gradient(180deg, rgba(255,255,255,0.018), rgba(255,255,255,0.018) 1px, transparent 1px, transparent 15px);
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,0.28), transparent 48%);
+  opacity: 0.24;
+  z-index: 0;
+}
+
+.deep-aura,
+.deep-aura::before,
+.deep-aura::after {
+  content: "";
+  position: fixed;
+  pointer-events: none;
+  filter: blur(78px);
+  z-index: 0;
+  opacity: 0.82;
+}
+
+.deep-aura {
+  top: 4vh;
+  left: -6vw;
+  width: 34vw;
+  height: 34vw;
+  background: radial-gradient(circle, rgba(69,146,255,0.26), transparent 62%);
+  animation: driftA 18s ease-in-out infinite;
+}
+
+.deep-aura::before {
+  top: 12vh;
+  right: -68vw;
+  width: 30vw;
+  height: 30vw;
+  background: radial-gradient(circle, rgba(122,103,255,0.23), transparent 62%);
+  animation: driftB 20s ease-in-out infinite;
+}
+
+.deep-aura::after {
+  bottom: -12vh;
+  left: 36vw;
+  width: 28vw;
+  height: 28vw;
+  background: radial-gradient(circle, rgba(24,86,176,0.22), transparent 62%);
+  animation: driftC 16s ease-in-out infinite;
+}
+
+@keyframes driftA { 0%,100%{transform:translate3d(0,0,0);} 50%{transform:translate3d(2vw,2vh,0);} }
+@keyframes driftB { 0%,100%{transform:translate3d(0,0,0);} 50%{transform:translate3d(-3vw,2vh,0);} }
+@keyframes driftC { 0%,100%{transform:translate3d(0,0,0);} 50%{transform:translate3d(1.5vw,-2vh,0);} }
+
+.shell { position: relative; z-index: 1; }
+.container { width: min(calc(100% - 40px), var(--max)); margin: 0 auto; }
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 80;
+  backdrop-filter: blur(18px);
+  background: linear-gradient(180deg, rgba(3,8,16,0.88), rgba(3,8,16,0.46));
+  border-bottom: 1px solid rgba(122,103,255,0.08);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  min-height: 76px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: inherit;
+  text-decoration: none;
+  min-width: 0;
+}
+
+.brand-mark {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--blue-bright), var(--violet));
+  box-shadow: 0 0 0 8px rgba(69,146,255,0.08), 0 0 28px rgba(69,146,255,0.3);
+  flex: 0 0 auto;
+}
+
+.brand-copy strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  letter-spacing: 0.30em;
+  text-transform: uppercase;
+}
+
+.brand-copy span {
+  display: block;
+  margin-top: 4px;
+  color: var(--soft);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-links a,
+.button {
+  appearance: none;
+  border: 1px solid rgba(122,103,255,0.16);
+  background: rgba(255,255,255,0.03);
+  color: var(--text);
+  text-decoration: none;
+  padding: 11px 15px;
+  border-radius: 999px;
+  transition: transform 220ms ease, border-color 220ms ease, background 220ms ease, box-shadow 220ms ease;
+  cursor: pointer;
+  font: inherit;
+}
+
+.nav-links a:hover,
+.button:hover,
+.nav-links a:focus-visible,
+.button:focus-visible,
+input:focus-visible {
+  outline: none;
+  transform: translateY(-1px);
+  border-color: rgba(116,192,255,0.34);
+  background: rgba(255,255,255,0.06);
+  box-shadow: 0 0 0 4px rgba(69,146,255,0.08);
+}
+
+.nav-links a[aria-current="page"] {
+  background: linear-gradient(135deg, rgba(69,146,255,0.16), rgba(122,103,255,0.16));
+  border-color: rgba(116,192,255,0.22);
+}
+
+.button-primary {
+  background: linear-gradient(135deg, rgba(69,146,255,0.18), rgba(122,103,255,0.18));
+  border-color: rgba(116,192,255,0.24);
+}
+
+.section,
+.hero,
+.lexical { padding: 34px 0; }
+
+.plate,
+.monument,
+.card,
+.formula,
+.footer-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid rgba(122,103,255,0.14);
+  background: linear-gradient(180deg, rgba(8, 20, 37, 0.80), rgba(6, 15, 29, 0.96));
+  box-shadow: var(--shadow-deep);
+}
+
+.plate::before,
+.monument::before,
+.card::before,
+.formula::before,
+.footer-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(255,255,255,0.028), transparent 24%, transparent 76%, rgba(255,255,255,0.014));
+}
+
+.plate { padding: 32px 36px; }
+.monument { padding: 44px; }
+.card,
+.formula { padding: 30px; }
+
+.lexical-grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 34px;
+  align-items: start;
+}
+
+.mini-label,
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.mini-label::before,
+.eyebrow::before {
+  content: "";
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(116,192,255,0.94), transparent);
+}
+
+h1, h2, h3, h4 {
+  margin: 0;
+  font-family: var(--font-display);
+  letter-spacing: -0.04em;
+}
+
+h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.9;
+}
+
+h2 {
+  font-size: clamp(1.85rem, 3vw, 2.8rem);
+  line-height: 1.02;
+}
+
+h3 {
+  font-size: 1.2rem;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+h4 {
+  font-size: 0.86rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--soft);
+  margin-bottom: 10px;
+}
+
+.lead {
+  margin: 18px 0 0;
+  color: var(--muted);
+  line-height: 1.95;
+  font-size: 1.1rem;
+  max-width: 74ch;
+}
+
+.subtle { color: var(--soft); }
+
+.lexical-word {
+  font-size: clamp(2.35rem, 4.6vw, 4rem);
+  line-height: 0.95;
+  text-shadow: 0 0 26px rgba(122,103,255,0.16);
+  margin-bottom: 10px;
+}
+
+.phonetic,
+.lexical-type,
+.lexical-note,
+.authority-note {
+  font-family: var(--font-mono);
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--soft);
+}
+
+.lexical-definition {
+  margin: 16px 0 12px;
+  color: var(--muted);
+  line-height: 1.92;
+  font-size: 1.06rem;
+  max-width: 62ch;
+}
+
+.lexical-side,
+.hero-side,
+.quote-box {
+  border-left: 1px solid rgba(116,192,255,0.22);
+  padding-left: 20px;
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 1rem;
+}
+
+.hero-title {
+  text-shadow: 0 0 34px rgba(69,146,255,0.12), 0 0 46px rgba(122,103,255,0.08);
+  margin-bottom: 10px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1.08rem, 1.9vw, 1.34rem);
+  line-height: 1.4;
+  color: var(--marine);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 30px;
+  align-items: start;
+}
+
+.section-label {
+  padding-top: 12px;
+  position: sticky;
+  top: 104px;
+}
+
+.section-label .mini {
+  font-size: 0.74rem;
+  color: var(--soft);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.section-label p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.84;
+  max-width: 28ch;
+}
+
+.stack { display: grid; gap: 18px; }
+
+.card p,
+.card li,
+.formula p {
+  color: var(--muted);
+  line-height: 1.88;
+  font-size: 1rem;
+}
+
+.card ul { margin: 0; padding-left: 18px; }
+
+.grid-2,
+.grid-3,
+.dimension-grid,
+.tiers-grid,
+.limits-grid,
+.citation-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.grid-2,
+.dimension-grid,
+.limits-grid,
+.citation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-3,
+.tiers-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.dimension-card {
+  min-height: 290px;
+  background:
+    radial-gradient(circle at 84% 18%, rgba(122,103,255,0.10), transparent 22%),
+    linear-gradient(180deg, rgba(10,24,42,0.82), rgba(6,14,26,0.96));
+}
+
+.dimension-kicker,
+.tier-kicker {
+  display: inline-flex;
+  margin-bottom: 12px;
+  color: var(--soft);
+  font-size: 0.78rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.formula {
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 16%, rgba(116,192,255,0.08), transparent 22%),
+    linear-gradient(180deg, rgba(10,24,42,0.84), rgba(6,14,26,0.98));
+}
+
+.formula .mini {
+  color: var(--soft);
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.equation {
+  font-family: var(--font-mono);
+  font-size: clamp(1.12rem, 2.1vw, 1.56rem);
+  color: var(--text);
+  padding: 20px 22px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(122,103,255,0.16);
+  background: rgba(255,255,255,0.02);
+  overflow-x: auto;
+  display: inline-block;
+  max-width: 100%;
+  box-shadow: inset 0 0 0 1px rgba(116,192,255,0.03);
+}
+
+.doctrine {
+  padding: 34px;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(69,146,255,0.08), transparent 18%),
+    linear-gradient(180deg, rgba(10,24,42,0.84), rgba(6,14,26,0.98));
+}
+
+.footer { padding: 36px 0 58px; }
+
+.footer-panel {
+  padding: 26px 30px;
+  display: grid;
+  gap: 16px;
+}
+
+.footer-panel p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.86;
+}
+
+.footer-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: var(--soft);
+  font-size: 0.85rem;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 660ms ease, transform 660ms ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1180px) {
+  .lexical-grid,
+  .hero-grid,
+  .section-grid,
+  .grid-2,
+  .grid-3,
+  .dimension-grid,
+  .tiers-grid,
+  .limits-grid,
+  .citation-grid { grid-template-columns: 1fr; }
+  .section-label { position: static; }
+}
+
+@media (max-width: 760px) {
+  .container { width: min(calc(100% - 24px), var(--max)); }
+  .nav-links { display: none; }
+  .nav-inner { min-height: 64px; align-items: flex-start; padding: 10px 0; }
+  .plate,
+  .monument,
+  .card,
+  .formula,
+  .footer-panel { padding: 22px; }
+  .section,
+  .hero,
+  .lexical { padding: 24px 0; }
+  h1 { font-size: clamp(2.5rem, 13vw, 4.6rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+
+  </style>
+</head>
+<body>
+  <div class="deep-aura" aria-hidden="true"></div>  <div class="shell">
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="brand" href="index.html" aria-label="Return to Reefier home">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-copy">
+            <strong>Reefier</strong>
+            <span>Structural Intelligence Beneath the Surface</span>
+          </span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="manifesto.html">Manifesto</a>
+          <a href="framework.html" aria-current="page">Framework</a>
+          <a href="about.html">About</a>
+        </nav>
+      </div>
+    </header><main>
+  <section class="lexical">
+    <div class="container">
+      <article class="plate reveal">
+        <div class="lexical-grid">
+          <div>
+            <div class="mini-label">Methodological Authority</div>
+            <h1 class="lexical-word">The Reefier Index</h1>
+            <p class="lexical-type">Structural assessment model</p>
+            <p class="lexical-definition">A methodological system designed to detect, measure, and classify the degree to which intelligence, resilience, and strategic value are produced by hidden architecture rather than visible surface behavior.</p>
+            <p class="lexical-note">The framework exists to stabilize Reefier as a measurable condition. It does not replace the concept; it operationalizes it.</p>
+            <p class="authority-note">Definition, variable structure, scoring logic, and interpretive tiers are all presented here as reference-grade methodological components.</p>
+          </div>
+          <div class="lexical-side">This page is not a secondary explanation. It is the formal method layer. If the home surface defines Reefier, the framework establishes how Reefier can be applied, scored, compared, and cited without collapsing back into metaphor.</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="hero">
+    <div class="container">
+      <article class="monument reveal">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Framework · Methodology · Classification Surface</div>
+            <h1 class="hero-title">THE REEFIER INDEX</h1>
+            <div class="hero-subtitle">The official methodology for structural intelligence</div>
+            <p class="lead">Reefier is a structural condition. The Reefier Index is the method used to detect, measure, and classify it. Rather than evaluating surface performance, the Index assesses whether a system derives its intelligence from deep structure, interconnection, resilience, and non-visible operational logic.</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#formula">View Formula</a>
+              <a class="button" href="index.html#index">Open Live Index</a>
+            </div>
+          </div>
+          <div class="hero-side">The Reefier Index exists to identify systems whose true strategic value lies beneath immediate interpretation. It is not a measure of visibility, trend, or market heat. It is a measure of structural depth.</div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="definition">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Definition</div>
+        <h2>What the Index measures</h2>
+        <p>The framework begins by drawing a clear boundary around the object of assessment.</p>
+      </div>
+      <div class="stack">
+        <div class="grid-2">
+          <article class="card reveal">
+            <h3>Purpose</h3>
+            <p>The Reefier Index measures the degree to which a system derives intelligence, endurance, and strategic value from deep, interconnected, and non-visible structure.</p>
+            <p>It does not measure popularity, aesthetics, short-term market performance, or generic product quality.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Central Question</h3>
+            <p>To what extent does a system depend on deep, interconnected, and non-visible structure to produce its intelligence and endurance?</p>
+            <div class="quote-box">Every score generated by the Reefier Index remains anchored to this question.</div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="dimensions">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Variables</div>
+        <h2>The four structural dimensions</h2>
+        <p>Each variable is scored from 0 to 100 and interpreted within the total Reefier condition.</p>
+      </div>
+      <div class="stack">
+        <div class="dimension-grid">
+          <article class="card dimension-card reveal">
+            <div class="dimension-kicker">SD · Structural Density</div>
+            <h3>Layered underlying configuration</h3>
+            <p>Structural Density measures how much system value is produced by layered underlying configuration rather than visible surface simplicity.</p>
+            <p>It evaluates depth of architecture, hidden scaffolding, and the degree to which the system contains more internal structure than surface interpretation reveals.</p>
+          </article>
+          <article class="card dimension-card reveal">
+            <div class="dimension-kicker">IC · Interconnection</div>
+            <h3>Relational intelligence</h3>
+            <p>Interconnection measures how strongly system intelligence emerges from relationships, dependencies, and structural coupling rather than isolated units.</p>
+            <p>It evaluates whether parts gain meaning through linkage, whether value is networked by design, and whether the system behaves relationally rather than atomically.</p>
+          </article>
+          <article class="card dimension-card reveal">
+            <div class="dimension-kicker">RS · Resilience</div>
+            <h3>Endurance through structure</h3>
+            <p>Resilience measures the capacity of a system to preserve coherence and function under stress through structure, not through superficial reinforcement.</p>
+            <p>It evaluates adaptability, graceful degradation, and the degree to which continuity is built into configuration rather than patched onto the surface.</p>
+          </article>
+          <article class="card dimension-card reveal">
+            <div class="dimension-kicker">NVL · Non-Visible Logic</div>
+            <h3>Capability beneath immediate observation</h3>
+            <p>Non-Visible Logic measures how much of a system’s actual capability lies beneath immediate observation or surface interpretation.</p>
+            <p>It evaluates hidden operations, latent intelligence, and the degree to which the system’s true strength cannot be accurately judged through first contact alone.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="formula">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Formula</div>
+        <h2>Calculation logic</h2>
+        <p>Version 3 uses a clear and interpretable arithmetic model suitable for citation, replication, and institutional use.</p>
+      </div>
+      <div class="stack">
+        <div class="formula reveal">
+          <div class="mini">Official Equation</div>
+          <div class="equation">Reefier Score = (SD + IC + RS + NVL) / 4</div>
+          <p>Where SD = Structural Density, IC = Interconnection, RS = Resilience, and NVL = Non-Visible Logic. Each dimension is scored on a 0–100 scale. The final Reefier Score is the arithmetic mean of the four structural variables.</p>
+        </div>
+        <article class="card doctrine reveal">
+          <h3>Method boundary</h3>
+          <div class="quote-box">A high Reefier Score indicates that a system’s intelligence is produced primarily by hidden structure, interdependence, and resilient internal configuration rather than by visible surface simplicity.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tiers">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Classification</div>
+        <h2>Interpretive tiers</h2>
+        <p>The index does not stop at measurement. It classifies systems according to the depth and maturity of their Reefier condition.</p>
+      </div>
+      <div class="stack">
+        <div class="tiers-grid">
+          <article class="card reveal">
+            <div class="tier-kicker">0–24</div>
+            <h3>Surface-Led</h3>
+            <p>A system dominated by visible operation, with limited hidden architecture and weak dependence on deep structural logic.</p>
+          </article>
+          <article class="card reveal">
+            <div class="tier-kicker">25–49</div>
+            <h3>Shallow Structure</h3>
+            <p>Some structure is present, but intelligence and continuity still depend heavily on surface organization or direct intervention.</p>
+          </article>
+          <article class="card reveal">
+            <div class="tier-kicker">50–69</div>
+            <h3>Emerging Reefier Condition</h3>
+            <p>The system shows real structural layering and interdependence, but has not yet achieved mature depth or decisive hidden intelligence.</p>
+          </article>
+          <article class="card reveal">
+            <div class="tier-kicker">70–84</div>
+            <h3>Structured Depth</h3>
+            <p>A clearly Reefier system: meaningful hidden structure, effective interconnection, and value that exceeds what surface interpretation alone would suggest.</p>
+          </article>
+          <article class="card reveal">
+            <div class="tier-kicker">85–100</div>
+            <h3>Category-Defining Depth</h3>
+            <p>A system in which architecture, intelligence, and resilience are inseparable; deep structure is constitutive of its strategic value.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="limits">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Boundaries</div>
+        <h2>What the Index does not measure</h2>
+        <p>A serious methodology gains trust not only by stating what it captures, but by defining what lies outside its scope.</p>
+      </div>
+      <div class="stack">
+        <div class="limits-grid">
+          <article class="card reveal">
+            <h3>Excluded Signals</h3>
+            <ul>
+              <li>Popularity or attention volume</li>
+              <li>Revenue or short-term profitability</li>
+              <li>Visual quality or aesthetic taste</li>
+              <li>Brand heat or speculative momentum</li>
+            </ul>
+          </article>
+          <article class="card reveal">
+            <h3>Institutional Use</h3>
+            <p>The Reefier Index is designed for systems whose strategic value cannot be adequately explained by visible surface features alone.</p>
+            <p>It is best applied to architectures, infrastructures, intelligence systems, conceptual assets, and structurally complex environments.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="citation">
+    <div class="container section-grid">
+      <div class="section-label reveal">
+        <div class="mini">Citation Language</div>
+        <h2>Reference-grade statements</h2>
+        <p>These statements are written to be lifted into reports, notes, and future Reefier documentation without re-translation.</p>
+      </div>
+      <div class="stack">
+        <div class="citation-grid">
+          <article class="card reveal">
+            <h3>Statement One</h3>
+            <p>The Reefier Index exists to identify systems whose true strategic value lies beneath immediate interpretation.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Statement Two</h3>
+            <p>A high Reefier Score indicates that a system’s intelligence is produced primarily by hidden structure, interdependence, and resilient internal configuration rather than by visible surface simplicity.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Statement Three</h3>
+            <p>Reefier is not a measure of popularity or performance; it is a measure of structural depth and non-surface intelligence.</p>
+          </article>
+          <article class="card reveal">
+            <h3>Statement Four</h3>
+            <p>The methodology stabilizes Reefier as a condition that can be defined, measured, classified, and cited beyond its point of origin.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-panel reveal">
+        <p>The Reefier Framework establishes four institutional layers: definition, measurement, classification, and citation. It exists to make Reefier methodologically durable beyond the initial interface.</p>
+        <div class="footer-meta">
+          <span>Framework v3</span>
+          <span>·</span>
+          <span>Reference-Grade Methodology</span>
+          <span>·</span>
+          <span>Designed for Citation</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+  </div>  <script>
+    (function () {
+      const items = document.querySelectorAll('.reveal');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduceMotion || !('IntersectionObserver' in window)) {
+        items.forEach((item) => item.classList.add('is-visible'));
+        return;
+      }
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: '0px 0px -6% 0px' });
+      items.forEach((item) => observer.observe(item));
+    })();
+  </script>
+</body>
+</html>
